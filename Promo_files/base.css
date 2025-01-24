@@ -1,0 +1,121 @@
+
+html {
+    height: 100%;
+}
+
+body {
+    background-color: #FFFFFF;
+    padding: 0;
+    margin: 0;
+    font-family:Arial, Helvetica, sans-serif;
+    line-height: 1.7em;
+    height: 100%;
+}
+
+
+h1 {
+    position:  relative;
+    left: -1em;
+    font-family:Arial, Helvetica, sans-serif;
+    text-transform: capitalize;
+    padding-left:  1em;
+    border-left:  3px solid #808080;
+    color:  #808080;
+}
+
+h1:first-letter, h2:first-letter, h3:first-letter, h4:first-letter, h5:first-letter, h6:first-letter {
+    /*color:  #ff6a00;*/
+    color: #ff6a00;
+}
+
+
+h1 {
+    margin-top:  1.5em;
+}
+
+
+#Logo {
+    position:  fixed;
+    left:  0;
+    top:  0;
+    display:  none;
+}
+
+#Home {
+    font-weight: bold;
+    font-family: monospace;
+    color:  red;
+    font-size: 2em;
+    border: 0;
+    position: relative;
+    left:  -5px;
+}
+
+#Home a {
+    text-decoration: none;
+    border: 0;
+    font-family: 'Federant', cursive;
+}
+
+#Arrow {
+    position:  relative;
+    display: none;
+}
+
+#Menu {
+    position: fixed;
+    text-align: right;
+    width: 15%;
+    left: 6%;
+    top: 0px;
+    padding: 1em;
+    margin: 0;
+    display:  none;
+    border-right:  2px solid #808080;
+}
+
+#Menu a {
+    text-decoration: none;
+    color:  #808080;
+}
+
+#Menu a:hover {
+    text-decoration: none;
+    color:  red;
+}
+
+#RootFrame {
+    position: absolute;
+    width: 50%;
+    left: 30%;
+    top: 0em;
+    padding: 1em;
+    margin: 0;
+}
+
+#RootFrame a {
+    text-decoration: none;
+    border-bottom:  1px dotted grey;
+    color:  #808080;
+}
+
+#RootFrame a:hover {
+    text-decoration: none;
+    border-bottom:  1px dotted #ff6a00;
+    color:  #ff6a00;
+}
+
+#Footer {
+    color:  #000;
+    margin-top:  3em;
+    margin-bottom:  2em;
+    opacity: 0.4;
+}
+
+.DownloadIcon {
+    border:  0px;
+    position:  relative;
+    top: 3px;
+}
+
+
