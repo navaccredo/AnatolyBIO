@@ -12,14 +12,14 @@
   <style>
     body {
       font-family: 'Segoe UI', system-ui, sans-serif;
-      scroll-behavior: smooth;
+      
     }
   </style>
 </head>
-<body class="bg-white text-gray-900">
+<body class="bg-gray-100 text-gray-900">
 
 <!-- TOP NAVBAR -->
-<header class="border-b border-gray-200 bg-white fixed w-full z-50">
+<header class="border-b border-gray-300 bg-gray-100 fixed w-full z-50">
   <nav class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
     <div class="flex items-center gap-3 text-lg font-semibold text-gray-800">
       <!-- Logo similar to original sinyavin.com style -->
@@ -103,12 +103,16 @@
           using modern API-based architectures.
         </p>
 
-        
-
         <p>
           Strong focus on Business Central SaaS architecture, extension-based customization strategies, and scalable
           integration patterns aligned with modern Microsoft ecosystem best practices.
         </p>
+
+        <p>
+          Excellent analytical & problem-solving skills. Strong team player with excellent interpersonal and communication
+          proficiency.
+        </p>
+
       </div>
     </section>
 
@@ -180,15 +184,6 @@
           solutions and Microsoft Dynamics NAV utilizing web services.
         </p>
 
-        <p>
-          Successfully delivered a complex upgrade project, migrating Microsoft Dynamics NAV to Microsoft Dynamics 365
-          Business Central with seamless data migration.
-        </p>
-
-        <p>
-          Excellent analytical & problem-solving skills. Strong team player with excellent interpersonal and communication
-          proficiency.
-        </p>
       </div>
     </section>
 
@@ -297,6 +292,34 @@
 </footer>
 
 <script>
+// Native smooth scrolling (stable implementation)
+// subtle delay before smooth scroll (Microsoft Docs-style feel)
+document.documentElement.style.scrollBehavior = "smooth";
+
+const delayedLinks = document.querySelectorAll("aside nav a, header nav a");
+
+delayedLinks.forEach(link => {
+  link.addEventListener("click", function(e) {
+    const targetId = this.getAttribute("href");
+    if (!targetId || !targetId.startsWith("#")) return;
+
+    const target = document.querySelector(targetId);
+    if (!target) return;
+
+    e.preventDefault();
+
+    setTimeout(() => {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 80);
+  });
+});
+
+// ensure proper offset for fixed header
+const sectionsForOffset = document.querySelectorAll("main section[id]");
+sectionsForOffset.forEach(section => {
+  section.style.scrollMarginTop = "140px";
+});
+
 // Highlight active sidebar section on scroll (Microsoft Docs-style behavior)
 const sections = document.querySelectorAll("main section[id]");
 const navLinks = document.querySelectorAll("aside nav a");
@@ -310,6 +333,11 @@ function activateLink() {
       current = section.getAttribute("id");
     }
   });
+
+  // ensure last section (Contact) activates when near page bottom
+  if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 40) {
+    current = "contact";
+  }
 
   navLinks.forEach(link => {
     link.classList.remove(
