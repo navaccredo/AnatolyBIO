@@ -1,0 +1,20 @@
+# Node modules
+node_modules/
+
+# Local VS Code settings
+.vscode/
+
+# Tailwind source files (optional)
+src/
+
+# macOS
+.DS_Store
+
+# npm logs
+npm-debug.log*
+
+# Optional local configs
+*.local
+
+*.js
+*json
